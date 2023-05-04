@@ -26,17 +26,17 @@ ASSIGNMENT              (=)
 WHITESPACE              [\s\n\t]+
 
 %%
-{RESERVED_WORD}         printf("reserved word: %s\n", yytext);
-{IDENTIFIER}            printf("identifier: %s\n", yytext);
-{STRING_LITERAL}        printf("string literal: %s\n", yytext);
-{FLOAT}                 printf("float: %s\n", yytext);
-{INTEGER}               printf("integer: %s\n", yytext);
-{ARITHMETIC_OPERATOR}   printf("arithmetic operator: %s\n", yytext);
-{RELATIONAL_OPERATOR}   printf("relational operator: %s\n", yytext);
-{SPECIAL_CHARACTER}     printf("special character: %s\n", yytext);
-{OPENING_BRACKET}       printf("opening bracket: %s\n", yytext);
-{CLOSING_BRACKET}       printf("closing bracket: %s\n", yytext);
-{ASSIGNMENT}            printf("assignment: %s\n", yytext);
+{RESERVED_WORD}         printf("<RESERVED_WORD, %s>\n", yytext);
+{IDENTIFIER}            printf("<IDENTIFIER, %s>\n", yytext);
+{STRING_LITERAL}        printf("STRING_LITERAL, %s>\n", yytext);
+{FLOAT}                 printf("<FLOAT, %s>\n", yytext);
+{INTEGER}               printf("<INTEGER, %s>\n", yytext);
+{ARITHMETIC_OPERATOR}   printf("ARITHMETIC_OPERATOR, %s>\n", yytext);
+{RELATIONAL_OPERATOR}   printf("<RELATIONAL_OPERATOR, %s>\n", yytext);
+{SPECIAL_CHARACTER}     printf("<SPECIAL_CHARACTER, %s>\n", yytext);
+{OPENING_BRACKET}       printf("<OPENING_BRACKET, %s>\n", yytext);
+{CLOSING_BRACKET}       printf("<CLOSING_BRACKET, %s>\n", yytext);
+{ASSIGNMENT}            printf("<ASSIGNMENT, %s>\n", yytext);
 "\n"                    {lineno++;}
 [ \t\r\f]+              /* eat up whitespace */
 .                       {yyerror("Unrecognized character");}
